@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+ifstream fin("bisectoare.in");
+ofstream fout("bisectoare.out");
+
+multiset<int> x;
+
+int main()
+{
+    int num;
+    while(fin >> num){
+        x.insert(num);
+    }
+    
+    for(auto& num : x){
+        if(x.count(num) % 2 == 1){
+            fout << num;
+            return 0;
+        }
+    }
+
+    return 0;
+}
